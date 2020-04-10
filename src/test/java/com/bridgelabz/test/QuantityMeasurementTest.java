@@ -18,4 +18,13 @@ public class QuantityMeasurementTest {
         boolean inchAndFeet = quantityMeasurement.compare(converterInches, converterFeet);
         Assert.assertEquals(true, inchAndFeet);
     }
+
+    @Test
+    public void givenFeetAndFeetZero_WhenCompare_ThenShouldReturnTrue() {
+        UnitConverter converterInches = new UnitConverter(0, Units.FEET);
+        UnitConverter converterFeet = new UnitConverter(0, Units.FEET);
+        quantityMeasurement = new QuantityMeasurement();
+        boolean inchAndFeet = quantityMeasurement.compare(converterInches, converterFeet);
+        Assert.assertEquals(true, inchAndFeet);
+    }
 }
