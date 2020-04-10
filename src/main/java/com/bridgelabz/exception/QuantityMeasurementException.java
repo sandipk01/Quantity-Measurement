@@ -3,7 +3,7 @@ package com.bridgelabz.exception;
 public class QuantityMeasurementException extends Exception {
 
     public enum ExceptionType {
-        NULL_EXCEPTION;
+        NULL_EXCEPTION,WRONG_TYPE;
     }
 
     public ExceptionType type;
