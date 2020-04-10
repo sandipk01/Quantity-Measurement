@@ -1,12 +1,12 @@
-package com.bridgelabz.service;
+package com.bridgelabz.exception;
 
-public class QuantityMeasurementException extends Throwable {
+public class QuantityMeasurementException extends Exception {
 
     public enum ExceptionType {
         NULL_EXCEPTION;
     }
 
-    ExceptionType type;
+    public ExceptionType type;
 
     public QuantityMeasurementException(ExceptionType type, String message) {
         super(message);
