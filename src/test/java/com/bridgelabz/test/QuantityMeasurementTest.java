@@ -87,4 +87,12 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(true, result);
     }
 
+    @Test
+    public void givenInchTypeObject_WhenCompare_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterInches = new UnitConverter(0, Units.INCHES);
+        UnitConverter converterInches2 = new UnitConverter(0, Units.INCHES);
+        quantityMeasurement = new QuantityMeasurement();
+        result = quantityMeasurement.compare(converterInches, converterInches2);
+        Assert.assertEquals(true, result);
+    }
 }
