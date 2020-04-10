@@ -11,6 +11,10 @@ public class UnitConverter {
         this.unitType=unit.getUnitType();
     }
 
+    public double getValue() {
+        return value;
+    }
+
     public UnitType getUnitType() {
         return unitType;
     }
