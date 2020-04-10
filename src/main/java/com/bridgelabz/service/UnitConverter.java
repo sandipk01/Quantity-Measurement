@@ -1,11 +1,11 @@
 package com.bridgelabz.service;
 
-public class Quantity {
+public class UnitConverter {
 
     private double value;
 
     //Parameterized constructor for passing argument value and unit.
-    public Quantity(double value, Units unit) {
+    public UnitConverter(double value, Units unit) {
         this.value=Converting(value,unit);
     }
 
@@ -19,7 +19,7 @@ public class Quantity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Quantity quantity = (Quantity) o;
+        UnitConverter quantity = (UnitConverter) o;
         return Double.compare(quantity.value, value) == 0;
     }
 
