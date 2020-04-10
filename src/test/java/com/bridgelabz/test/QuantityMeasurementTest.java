@@ -49,4 +49,13 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(true, result);
     }
 
+    @Test
+    public void givenSameTypeObject_WhenCompare_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterInches = new UnitConverter(0, Units.FEET);
+        UnitConverter converterFeet = new UnitConverter(0, Units.FEET);
+        quantityMeasurement = new QuantityMeasurement();
+        result = quantityMeasurement.compare(converterInches, converterFeet);
+        Assert.assertEquals(true, result);
+    }
+
 }
