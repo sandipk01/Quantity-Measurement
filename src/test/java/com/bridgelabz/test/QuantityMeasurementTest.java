@@ -95,4 +95,15 @@ public class QuantityMeasurementTest {
         result = quantityMeasurement.compare(converterInches, converterInches2);
         Assert.assertEquals(true, result);
     }
+
+    @Test
+    public void givenInchValue_WhenCompare_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterInches = new UnitConverter(0, Units.INCHES);
+        UnitConverter converterInches2 = new UnitConverter(0, Units.INCHES);
+        quantityMeasurement = new QuantityMeasurement();
+        quantityMeasurement.compare(converterInches,converterInches2);
+        result = (converterInches.getValue() == converterInches2.getValue()) ? true : false;
+        Assert.assertEquals(true, result);
+    }
+
 }
