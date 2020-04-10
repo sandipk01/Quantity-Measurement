@@ -1,4 +1,5 @@
 package com.bridgelabz.service;
 
-public class UnitType {
+public enum UnitType {
+    LENGTH;
 }
