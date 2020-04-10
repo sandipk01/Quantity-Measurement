@@ -9,7 +9,7 @@ public enum Units {
     Units(double unitValue) {
         this.unitValue = unitValue;
     }
-    
+
     public double getUnitValue() {
         return unitValue;
     }
