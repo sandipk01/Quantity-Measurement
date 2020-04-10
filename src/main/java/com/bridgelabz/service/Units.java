@@ -2,12 +2,18 @@ package com.bridgelabz.service;
 
 public enum Units {
 
-    INCHES(1), FEET(12);
+    INCHES(UnitType.LENGTH,1), FEET(UnitType.LENGTH,12);
 
     private double unitValue;
+    private UnitType unitType;
 
-    Units(double unitValue) {
+    Units(UnitType unitType,double unitValue) {
         this.unitValue = unitValue;
+        this.unitType=unitType;
+    }
+
+    public UnitType getUnitType() {
+        return unitType;
     }
 
     public double getUnitValue() {
