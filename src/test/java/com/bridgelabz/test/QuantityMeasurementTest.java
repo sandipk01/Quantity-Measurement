@@ -32,10 +32,10 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenFeetObjectNull_WhenCompare_ThenShouldThrowsNullException() {
-        UnitConverter converterFeet = new UnitConverter(0, Units.FEET);
+        UnitConverter converterInch = new UnitConverter(0, Units.INCHES);
         quantityMeasurement = new QuantityMeasurement();
         try {
-            result = quantityMeasurement.compare(converterFeet, null);
+            result = quantityMeasurement.compare(converterInch, null);
         } catch (QuantityMeasurementException e) {
             Assert.assertEquals(QuantityMeasurementException.ExceptionType.NULL_EXCEPTION, e.type);
         }
@@ -65,6 +65,25 @@ public class QuantityMeasurementTest {
         quantityMeasurement = new QuantityMeasurement();
         quantityMeasurement.compare(converterInches,converterFeet);
         result = (converterInches.getValue() == converterFeet.getValue()) ? true : false;
+        Assert.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenInchObjectNull_WhenCompare_ThenShouldThrowsNullException() {
+        UnitConverter converterFoot = new UnitConverter(0, Units.FEET);
+        quantityMeasurement = new QuantityMeasurement();
+        try {
+            result = quantityMeasurement.compare(converterFoot, null);
+        } catch (QuantityMeasurementException e) {
+            Assert.assertEquals(QuantityMeasurementException.ExceptionType.NULL_EXCEPTION, e.type);
+        }
+    }
+
+    @Test
+    public void givenInchSameObject_WhenCompare_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterInch = new UnitConverter(0, Units.INCHES);
+        quantityMeasurement = new QuantityMeasurement();
+        result = quantityMeasurement.compare(converterInch, converterInch);
         Assert.assertEquals(true, result);
     }
 
