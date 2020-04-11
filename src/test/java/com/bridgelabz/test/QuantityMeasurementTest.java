@@ -243,5 +243,12 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(2, result,0);
     }
 
-
+    @Test
+    public void givenKilogramAndGrams_WhenComparing_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterLiter = new UnitConverter(1, Units.KILOGRAMS);
+        UnitConverter converterMilliliters = new UnitConverter(1000, Units.GRAMS);
+        quantityMeasurement = new QuantityMeasurement();
+        result = quantityMeasurement.compare(converterLiter, converterMilliliters);
+        Assert.assertEquals(true, result);
+    }
 }
