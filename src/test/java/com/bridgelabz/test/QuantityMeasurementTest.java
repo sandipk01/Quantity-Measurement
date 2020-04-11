@@ -30,6 +30,8 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(true, result);
     }
 
+
+
     @Test
     public void givenFeetObjectNull_WhenCompare_ThenShouldThrowsNullException() {
         UnitConverter converterInch = new UnitConverter(0, Units.INCHES);
@@ -203,6 +205,15 @@ public class QuantityMeasurementTest {
         quantityMeasurement = new QuantityMeasurement();
         double addition = quantityMeasurement.addingTwoUnitValues(converterInch, converterCentimeter);
         Assert.assertEquals(3, addition,0);
+    }
+
+    @Test
+    public void givenGallonAndLiters_WhenCompareEquals_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterGallon = new UnitConverter(1, Units.GALLON);
+        UnitConverter converterLiters = new UnitConverter(3.78, Units.LITRE);
+        quantityMeasurement = new QuantityMeasurement();
+        result = quantityMeasurement.compare(converterGallon, converterLiters);
+        Assert.assertEquals(true, result);
     }
 
 }
