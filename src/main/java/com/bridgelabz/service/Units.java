@@ -2,7 +2,8 @@ package com.bridgelabz.service;
 
 public enum Units {
 
-    INCHES(UnitType.LENGTH,1), FEET(UnitType.LENGTH,12);
+    INCHES(UnitType.LENGTH,1), FEET(UnitType.LENGTH,12),
+    YARDS(UnitType.LENGTH, 36);
 
     private double unitValue;
     private UnitType unitType;
