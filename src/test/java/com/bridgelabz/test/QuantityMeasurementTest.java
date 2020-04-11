@@ -63,7 +63,7 @@ public class QuantityMeasurementTest {
         UnitConverter converterInches = new UnitConverter(0, Units.FEET);
         UnitConverter converterFeet = new UnitConverter(0, Units.FEET);
         quantityMeasurement = new QuantityMeasurement();
-        quantityMeasurement.compare(converterInches,converterFeet);
+        quantityMeasurement.compare(converterInches, converterFeet);
         result = (converterInches.getValue() == converterFeet.getValue()) ? true : false;
         Assert.assertEquals(true, result);
     }
@@ -101,7 +101,7 @@ public class QuantityMeasurementTest {
         UnitConverter converterInches = new UnitConverter(0, Units.INCHES);
         UnitConverter converterInches2 = new UnitConverter(0, Units.INCHES);
         quantityMeasurement = new QuantityMeasurement();
-        quantityMeasurement.compare(converterInches,converterInches2);
+        quantityMeasurement.compare(converterInches, converterInches2);
         result = (converterInches.getValue() == converterInches2.getValue()) ? true : false;
         Assert.assertEquals(true, result);
     }
@@ -111,7 +111,7 @@ public class QuantityMeasurementTest {
         UnitConverter converterFeet = new UnitConverter(3, Units.FEET);
         UnitConverter converterYards = new UnitConverter(1, Units.YARDS);
         quantityMeasurement = new QuantityMeasurement();
-        result=quantityMeasurement.compare(converterFeet,converterYards);
+        result = quantityMeasurement.compare(converterFeet, converterYards);
         Assert.assertEquals(true, result);
     }
 
@@ -120,7 +120,16 @@ public class QuantityMeasurementTest {
         UnitConverter converterFeet = new UnitConverter(1, Units.FEET);
         UnitConverter converterYards = new UnitConverter(1, Units.YARDS);
         quantityMeasurement = new QuantityMeasurement();
-        result=quantityMeasurement.compare(converterFeet,converterYards);
+        result = quantityMeasurement.compare(converterFeet, converterYards);
+        Assert.assertNotEquals(true, result);
+    }
+
+    @Test
+    public void givenInchNotEqualsYards_WhenCompare_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterInch = new UnitConverter(1, Units.INCHES);
+        UnitConverter converterYards = new UnitConverter(1, Units.YARDS);
+        quantityMeasurement = new QuantityMeasurement();
+        result = quantityMeasurement.compare(converterInch, converterYards);
         Assert.assertNotEquals(true, result);
     }
 
