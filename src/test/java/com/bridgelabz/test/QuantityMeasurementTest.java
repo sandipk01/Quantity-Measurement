@@ -225,4 +225,13 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(true, result);
     }
 
+    @Test
+    public void givenGallonAndLiters_WhenAdding_ThenShouldReturnAdditionOfBoth() throws QuantityMeasurementException {
+        UnitConverter converterGallon = new UnitConverter(1, Units.GALLON);
+        UnitConverter converterLiter = new UnitConverter(3.78, Units.LITRE);
+        quantityMeasurement = new QuantityMeasurement();
+        double result = quantityMeasurement.addingTwoUnitValues(converterGallon, converterLiter);
+        Assert.assertEquals(7.57, result,0.1);
+    }
+
 }
