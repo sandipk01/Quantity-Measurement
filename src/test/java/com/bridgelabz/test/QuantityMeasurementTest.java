@@ -159,4 +159,13 @@ public class QuantityMeasurementTest {
         result = quantityMeasurement.compare(converterYards, converterFeet);
         Assert.assertEquals(true, result);
     }
+
+    @Test
+    public void givenInchesAndCentimeters_WhenCompareEquals_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterInches = new UnitConverter(2, Units.INCHES);
+        UnitConverter converterCentimeters = new UnitConverter(5, Units.CENTIMETER);
+        quantityMeasurement = new QuantityMeasurement();
+        result = quantityMeasurement.compare(converterInches, converterCentimeters);
+        Assert.assertEquals(true, result);
+    }
 }
