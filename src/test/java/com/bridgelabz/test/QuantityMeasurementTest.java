@@ -234,4 +234,14 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(7.57, result,0.1);
     }
 
+    @Test
+    public void givenLiterAndMilliliters_WhenAdding_ThenShouldReturnAdditionOfBoth() throws QuantityMeasurementException {
+        UnitConverter converterLiter = new UnitConverter(1, Units.LITRE);
+        UnitConverter converterMilliliters = new UnitConverter(1000, Units.MILLILITRE);
+        quantityMeasurement = new QuantityMeasurement();
+        double result = quantityMeasurement.addingTwoUnitValues(converterLiter, converterMilliliters);
+        Assert.assertEquals(2, result,0);
+    }
+
+
 }
