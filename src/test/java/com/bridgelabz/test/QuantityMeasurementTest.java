@@ -216,4 +216,13 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(true, result);
     }
 
+    @Test
+    public void givenLitersAndMilliliter_WhenCompareEquals_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterLiter = new UnitConverter(1, Units.LITRE);
+        UnitConverter converterMilliliters = new UnitConverter(1000, Units.MILLILITRE);
+        quantityMeasurement = new QuantityMeasurement();
+        result = quantityMeasurement.compare(converterLiter, converterMilliliters);
+        Assert.assertEquals(true, result);
+    }
+
 }
