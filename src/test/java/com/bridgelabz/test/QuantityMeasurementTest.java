@@ -269,4 +269,13 @@ public class QuantityMeasurementTest {
         double result = quantityMeasurement.addingTwoUnitValues(converterTonne, converterGram);
         Assert.assertEquals(1001, result,0);
     }
+
+    @Test
+    public void givenFarhrenheitAndCelsius_WhenCompare_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterFarhrenheit = new UnitConverter(212, Units.FAHRENHEIT);
+        UnitConverter converterCelsius = new UnitConverter(100, Units.CELSIUS);
+        quantityMeasurement = new QuantityMeasurement();
+        result = quantityMeasurement.compare(converterFarhrenheit, converterCelsius);
+        Assert.assertEquals(true, result);
+    }
 }
