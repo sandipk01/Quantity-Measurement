@@ -168,4 +168,14 @@ public class QuantityMeasurementTest {
         result = quantityMeasurement.compare(converterInches, converterCentimeters);
         Assert.assertEquals(true, result);
     }
+
+    @Test
+    public void givenInputInInches_WhenAdding_ThenShouldReturnAdditionOfBoth() throws QuantityMeasurementException {
+        UnitConverter converterInches1 = new UnitConverter(2, Units.INCHES);
+        UnitConverter converterInches2 = new UnitConverter(2, Units.INCHES);
+        quantityMeasurement = new QuantityMeasurement();
+        double addition = quantityMeasurement.addingTwoUnitValues(converterInches1, converterInches2);
+        Assert.assertEquals(4, addition,0);
+    }
+
 }
