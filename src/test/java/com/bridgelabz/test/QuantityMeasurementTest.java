@@ -178,4 +178,13 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(4, addition,0);
     }
 
+    @Test
+    public void givenFeetAndInches_WhenAdding_ThenShouldReturnAdditionOfBoth() throws QuantityMeasurementException {
+        UnitConverter converterFeet = new UnitConverter(1, Units.FEET);
+        UnitConverter converterInches = new UnitConverter(2, Units.INCHES);
+        quantityMeasurement = new QuantityMeasurement();
+        double addition = quantityMeasurement.addingTwoUnitValues(converterFeet, converterInches);
+        Assert.assertEquals(14, addition,0);
+    }
+
 }
