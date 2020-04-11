@@ -245,10 +245,19 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenKilogramAndGrams_WhenComparing_ThenShouldReturnTrue() throws QuantityMeasurementException {
-        UnitConverter converterLiter = new UnitConverter(1, Units.KILOGRAMS);
-        UnitConverter converterMilliliters = new UnitConverter(1000, Units.GRAMS);
+        UnitConverter converterKiloGram = new UnitConverter(1, Units.KILOGRAMS);
+        UnitConverter converterGram = new UnitConverter(1000, Units.GRAMS);
         quantityMeasurement = new QuantityMeasurement();
-        result = quantityMeasurement.compare(converterLiter, converterMilliliters);
+        result = quantityMeasurement.compare(converterKiloGram, converterGram);
+        Assert.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenTonneAndKilograms_WhenCompare_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterTonne = new UnitConverter(1, Units.TONNE);
+        UnitConverter converterKilogram = new UnitConverter(1000, Units.KILOGRAMS);
+        quantityMeasurement = new QuantityMeasurement();
+        result = quantityMeasurement.compare(converterTonne, converterKilogram);
         Assert.assertEquals(true, result);
     }
 }
