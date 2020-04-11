@@ -1,5 +1,5 @@
 package com.bridgelabz.service;
 
 public enum UnitType {
-    LENGTH,VOLUME,WEIGHT;
+    LENGTH,VOLUME,WEIGHT,TEMPERATURE;
 }
