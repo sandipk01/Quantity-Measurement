@@ -17,7 +17,7 @@ public class QuantityMeasurement {
         if (unitConverter1 == null || unitConverter2 == null)
             throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.NULL_EXCEPTION, "Null Object");
         if (unitConverter1.getUnitType() != unitConverter2.getUnitType())
-            throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.WRONG_TYPE, "Attribute Mismatch");
+            throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.WRONG_TYPE, "Wrong Type");
         return unitConverter1.getValue() + unitConverter2.getValue();
     }
 }
