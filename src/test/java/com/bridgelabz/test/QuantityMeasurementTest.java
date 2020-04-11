@@ -260,4 +260,13 @@ public class QuantityMeasurementTest {
         result = quantityMeasurement.compare(converterTonne, converterKilogram);
         Assert.assertEquals(true, result);
     }
+
+    @Test
+    public void givenTonneAndGrams_WhenAdding_ThenShouldReturnAdditionOfBoth() throws QuantityMeasurementException {
+        UnitConverter converterTonne = new UnitConverter(1, Units.TONNE);
+        UnitConverter converterGram = new UnitConverter(1000, Units.GRAMS);
+        quantityMeasurement = new QuantityMeasurement();
+        double result = quantityMeasurement.addingTwoUnitValues(converterTonne, converterGram);
+        Assert.assertEquals(1001, result,0);
+    }
 }
