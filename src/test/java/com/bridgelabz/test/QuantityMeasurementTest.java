@@ -196,4 +196,13 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(24, addition,0);
     }
 
+    @Test
+    public void givenInchAndCentimeter_WhenAdding_ThenShouldReturnAdditionOfBoth() throws QuantityMeasurementException {
+        UnitConverter converterInch = new UnitConverter(2, Units.INCHES);
+        UnitConverter converterCentimeter = new UnitConverter(2.5, Units.CENTIMETER);
+        quantityMeasurement = new QuantityMeasurement();
+        double addition = quantityMeasurement.addingTwoUnitValues(converterInch, converterCentimeter);
+        Assert.assertEquals(3, addition,0);
+    }
+
 }
