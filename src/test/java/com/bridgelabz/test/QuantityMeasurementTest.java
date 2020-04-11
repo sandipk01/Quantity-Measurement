@@ -115,5 +115,13 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(true, result);
     }
 
+    @Test
+    public void givenFeetNotEqualsYards_WhenCompare_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterFeet = new UnitConverter(1, Units.FEET);
+        UnitConverter converterYards = new UnitConverter(1, Units.YARDS);
+        quantityMeasurement = new QuantityMeasurement();
+        result=quantityMeasurement.compare(converterFeet,converterYards);
+        Assert.assertNotEquals(true, result);
+    }
 
 }
