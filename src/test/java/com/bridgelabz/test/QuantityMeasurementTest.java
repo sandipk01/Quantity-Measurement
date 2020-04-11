@@ -133,4 +133,13 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(true, result);
     }
 
+    @Test
+    public void givenYardAndInches_WhenCompareEquals_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterYards = new UnitConverter(1, Units.YARDS);
+        UnitConverter converterInches = new UnitConverter(36, Units.INCHES);
+        quantityMeasurement = new QuantityMeasurement();
+        result = quantityMeasurement.compare(converterYards, converterInches);
+        Assert.assertEquals(true, result);
+    }
+
 }
