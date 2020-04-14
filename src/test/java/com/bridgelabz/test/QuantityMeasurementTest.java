@@ -279,5 +279,16 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(true, result);
     }
 
+    @Test
+    public void givenLiterAndKilogram_WhenCompare_ThenShouldThrowsWrongTypeException() {
+        UnitConverter converterLiter = new UnitConverter(2, Units.LITRE);
+        UnitConverter converterKilogram = new UnitConverter(3, Units.KILOGRAMS);
+        quantityMeasurement = new QuantityMeasurement();
+        try {
+            result = quantityMeasurement.compare(converterLiter, converterKilogram);
+        } catch (QuantityMeasurementException e) {
+            Assert.assertEquals(QuantityMeasurementException.ExceptionType.WRONG_TYPE, e.type);
+        }
+    }
 
 }
