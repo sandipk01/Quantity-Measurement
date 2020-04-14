@@ -3,7 +3,7 @@ package com.bridgelabz.service;
 import com.bridgelabz.model.UnitType;
 import com.bridgelabz.model.Units;
 
-public class UnitConverter {
+public class UnitConverter implements IUnitConverter{
 
     private double value;
     private UnitType unitType;
