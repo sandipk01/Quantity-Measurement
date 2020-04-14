@@ -291,4 +291,17 @@ public class QuantityMeasurementTest {
         }
     }
 
+    @Test
+    public void givenFahrenheitAndCelsius_WhenAddition_ThenShouldThrowsInvalidAddition() {
+        UnitConverter converterFahrenheit = new UnitConverter(212, Units.FAHRENHEIT);
+        UnitConverter converterCelsius = new UnitConverter(100, Units.CELSIUS);
+        quantityMeasurement = new QuantityMeasurement();
+        try {
+            quantityMeasurement.addingTwoUnitValues(converterFahrenheit, converterCelsius);
+        } catch (QuantityMeasurementException e) {
+            Assert.assertEquals(QuantityMeasurementException.ExceptionType.Invalid_Addition,e.type);
+        }
+
+    }
+
 }
