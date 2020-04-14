@@ -7,7 +7,7 @@ public enum Units {
     LITRE(UnitType.VOLUME, 1), GALLON(UnitType.VOLUME, 3.78),
     MILLILITRE(UnitType.VOLUME,0.001),KILOGRAMS(UnitType.WEIGHT,1)
     , GRAMS(UnitType.WEIGHT, 0.001), TONNE(UnitType.WEIGHT, 1000),
-    FAHRENHEIT(UnitType.TEMPERATURE,1), CELSIUS(UnitType.TEMPERATURE, 2.12);
+    FAHRENHEIT(UnitType.TEMPERATURE,1), CELSIUS(UnitType.TEMPERATURE, 1);
 
     private double unitValue;
     private UnitType unitType;
