@@ -3,7 +3,7 @@ package com.bridgelabz.test;
 import com.bridgelabz.exception.QuantityMeasurementException;
 import com.bridgelabz.service.UnitConverter;
 import com.bridgelabz.service.QuantityMeasurement;
-import com.bridgelabz.service.Units;
+import com.bridgelabz.model.Units;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -271,11 +271,13 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenFarhrenheitAndCelsius_WhenCompare_ThenShouldReturnTrue() throws QuantityMeasurementException {
-        UnitConverter converterFarhrenheit = new UnitConverter(212, Units.FAHRENHEIT);
+    public void givenFahrenheitAndCelsius_WhenCompare_ThenShouldReturnTrue() throws QuantityMeasurementException {
+        UnitConverter converterFahrenheit = new UnitConverter(212, Units.FAHRENHEIT);
         UnitConverter converterCelsius = new UnitConverter(100, Units.CELSIUS);
         quantityMeasurement = new QuantityMeasurement();
-        result = quantityMeasurement.compare(converterFarhrenheit, converterCelsius);
+        result = quantityMeasurement.compare(converterFahrenheit, converterCelsius);
         Assert.assertEquals(true, result);
     }
+
+
 }

@@ -1,5 +1,8 @@
 package com.bridgelabz.service;
 
+import com.bridgelabz.model.UnitType;
+import com.bridgelabz.model.Units;
+
 public class UnitConverter {
 
     private double value;
@@ -7,8 +10,8 @@ public class UnitConverter {
 
     //Parameterized constructor for passing argument value and unit.
     public UnitConverter(double value, Units unit) {
-        this.value=Converting(value,unit);
-        this.unitType=unit.getUnitType();
+        this.value = Converting(value, unit);
+        this.unitType = unit.getUnitType();
     }
 
     public double getValue() {
@@ -20,8 +23,13 @@ public class UnitConverter {
     }
 
     //Method to Convert value into particular Unit.
-    private double Converting(double value,Units units){
-        return value*units.getUnitValue();
+    public double Converting(double value, Units units) {
+        switch (units.getUnitType()) {
+            case TEMPERATURE:
+                return (units == Units.FAHRENHEIT) ? (value - 32) * 5 / 9 : value;
+            default:
+                return value * units.getUnitValue();
+        }
     }
 
     //Overridden equals method.
